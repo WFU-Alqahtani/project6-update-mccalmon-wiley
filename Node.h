@@ -4,7 +4,7 @@
 class Node {
 public:
     // Node constructor
-    Node(YourClass v , Node* n = nullptr)
+    Node(Data v , Node* n = nullptr)
     {
         value = v;
         next = n;
@@ -17,7 +17,7 @@ public:
     friend class LinkedList;
 private:
 
-    YourClass value;
+    Data value;
     Node* next;
 
 };
