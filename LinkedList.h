@@ -27,7 +27,7 @@ public:
     bool Delete (YourClass obj);
     YourClass find (YourClass obj)
     void printList();
-    void InsertionSort();
+    void InsertionSort(vector<Data> v);
 
 private:
     Node* head;
