@@ -1,7 +1,6 @@
 //
 // Created by Cade Wiley on 3/31/20.
 //
-#include "InsertionSort.cpp"
 using namespace std;
 
 class Data {

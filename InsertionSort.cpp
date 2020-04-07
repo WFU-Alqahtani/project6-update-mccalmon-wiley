@@ -3,7 +3,6 @@
 #include <cassert>
 #include "BinaryInsertionSort.h"
 #include "Node.h"
-#include "Data.h
 #include <iostream>
 #include <fstream>
 using namespace std;
@@ -18,7 +17,7 @@ int main() {
    //read the file name of your dataset
 
     vector<Data> v;
-for(int i = 0; i < v.size(); i++)
+    for(int i = 0; i < v.size(); i++)
         {
         if(inFile.is_open()){
             getline(inFile, temp, ',');

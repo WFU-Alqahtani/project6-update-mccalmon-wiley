@@ -3,6 +3,7 @@
 //
 
 #include "LinkedList.h"
+#include <vector>
 
 LinkedList::LinkedList() {
     head = nullptr;
@@ -26,7 +27,7 @@ LinkedList::~LinkedList() {
 
 LinkedList::LinkedList(const LinkedList &list) {
     cout << "Copy constructor called" << endl;
-    head = new Node;
+    head = new Node(0, nullptr);
     *head = *(list.head);
 }
 
@@ -45,7 +46,7 @@ void LinkedList::InsertionSort(vector<Data> v) {
         current = head;
         previous = current;
         if (current->next == nullptr) {
-            Node* nextNode(v.at(i), nullptr);
+            Node* nextNode = new Node(v.at(i), nullptr);
             current->next = nextNode;
             didInsert = true;
             continue;
@@ -53,15 +54,15 @@ void LinkedList::InsertionSort(vector<Data> v) {
         while (current->next != nullptr) {
             previous = current;
             current = current->next;
-            if (previous.value <= v.at(i) && current.value > v.at(i)) {
-                Node* nextNode(v.at(i), previous->next);
+            if (previous->value <= v.at(i) && current->value > v.at(i)) {
+                Node* nextNode = new Node(v.at(i), nullptr);
                 previous->next = nextNode;
                 didInsert = true;
                 break;
             }
         }
         if (!didInsert) {
-            Node* nextNode(v.at(i), nullptr);
+            Node* nextNode = new Node(v.at(i), nullptr);
             current->next = nextNode;
         }
 

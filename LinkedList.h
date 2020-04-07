@@ -17,16 +17,16 @@ public:
     LinkedList(const LinkedList & list);
 
     //Assignment Operator
-    LinkedList &operator=(const LinkedList & rhs);
+    LinkedList &operator=(LinkedList rhs);
 
     //Destructor
     ~LinkedList();
 
     //Functions. You may not need to use them all
-    void append(YourClass obj);
-    bool Delete (YourClass obj);
-    YourClass find (YourClass obj)
-    void printList();
+    //void append(Data obj);
+    //bool Delete (Data obj);
+    //Data find (Data obj)
+    //void printList();
     void InsertionSort(vector<Data> v);
 
 private:
