@@ -9,6 +9,7 @@ LinkedList::LinkedList() {
 }
 
 LinkedList::~LinkedList() {
+    cout << "Destructor called" << endl;
     Node* current = head;
     if (current->next == nullptr) {
         delete current;
@@ -24,11 +25,13 @@ LinkedList::~LinkedList() {
 }
 
 LinkedList::LinkedList(const LinkedList &list) {
+    cout << "Copy constructor called" << endl;
     head = new Node;
     *head = *(list.head);
 }
 
 LinkedList &LinkedList::operator=(LinkedList rhs) {
+    cout << "Assignment operator called" << endl;
     swap(*this, rhs);
     return *this;
 }
