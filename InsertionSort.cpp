@@ -3,33 +3,16 @@
 #include <cassert>
 #include "BinaryInsertionSort.h"
 #include "Node.h"
-#include "Data.h"
-#include <iostream>
-#include <fstream>
 using namespace std;
+
 int main() {
 
-    double data;
-    ifstream inFile;
-    inFile.open("data.txt");
-    string temp;
-    string line;
-
-
+    string filename;
    //read the file name of your dataset
 
+    vector<YourClass> v;
 
-    vector<Data> v;
-
-    for(int i = 0; i < v.size(); i++)
-        if(inFile.is_open())
-        {
-            getline(inFile, temp, ',');
-            getline(inFile, line, '\n');
-            v.at(i) = data;
-        }
-    inFile.close();
-    // popula"te the vector with the data from your data set
+    // populate the vector with the data from your data set
 
     // binary insertion sort
     insertionSort(v, v.size());

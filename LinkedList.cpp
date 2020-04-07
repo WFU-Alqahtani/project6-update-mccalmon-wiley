@@ -9,15 +9,29 @@ LinkedList::LinkedList() {
 }
 
 LinkedList::~LinkedList() {
+    cout << "Destructor called" << endl;
     Node* current = head;
-    Node* previous = head;
+    if (current->next == nullptr) {
+        delete current;
+    }
+    else {
+        while (current->next != nullptr) {
+            Node* previous = current;
+            current = current->next;
+            delete previous;
+        }
+    }
 
 }
 
 LinkedList::LinkedList(const LinkedList &list) {
-
+    cout << "Copy constructor called" << endl;
+    head = new Node;
+    *head = *(list.head);
 }
 
-LinkedList &LinkedList::operator=(const LinkedList &rhs) {
-    return <#initializer#>;
+LinkedList &LinkedList::operator=(LinkedList rhs) {
+    cout << "Assignment operator called" << endl;
+    swap(*this, rhs);
+    return *this;
 }

@@ -1,5 +1,6 @@
 #ifndef NODE_H
 #define NODE_H
+#include "Data.h"
 
 class Node {
 public:
