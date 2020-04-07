@@ -10,14 +10,25 @@ LinkedList::LinkedList() {
 
 LinkedList::~LinkedList() {
     Node* current = head;
-    Node* previous = head;
+    if (current->next == nullptr) {
+        delete current;
+    }
+    else {
+        while (current->next != nullptr) {
+            Node* previous = current;
+            current = current->next;
+            delete previous;
+        }
+    }
 
 }
 
 LinkedList::LinkedList(const LinkedList &list) {
-
+    head = new Node;
+    *head = *(list.head);
 }
 
-LinkedList &LinkedList::operator=(const LinkedList &rhs) {
-    return <#initializer#>;
+LinkedList &LinkedList::operator=(LinkedList rhs) {
+    swap(*this, rhs);
+    return *this;
 }

@@ -3,6 +3,7 @@
 #include <cassert>
 #include "BinaryInsertionSort.h"
 #include "Node.h"
+#include "Data.h"
 using namespace std;
 
 int main() {
@@ -10,7 +11,7 @@ int main() {
     string filename;
    //read the file name of your dataset
 
-    vector<YourClass> v;
+    vector<Data> v;
 
     // populate the vector with the data from your data set
 
