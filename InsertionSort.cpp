@@ -12,12 +12,13 @@ ostream& operator<<(ostream& os, const Data& d)
     os << d.data;
     return os;
 }
+
 int main() {
 
     string dataStr;
     double dataNum;
     ifstream inFile;
-    inFile.open("data.txt");
+    inFile.open("../data.txt");
     string temp;
     string line;
    //read the file name of your dataset
@@ -25,6 +26,7 @@ int main() {
     vector<Data> v(2017);
     for(int i = 0; i < v.size(); i++)
         {
+        if (!inFile.eof()) {
 
             getline(inFile, temp, ',');
             getline(inFile, temp, ',');
@@ -32,11 +34,14 @@ int main() {
             getline(inFile, dataStr, ',');
             getline(inFile, line, '\n');
 
-            dataNum = stoi(dataStr);
+            cout << dataStr << endl;
+
+            //dataNum = stod(dataStr);
 
             Data data(dataNum);
 
             v.at(i) = data;
+        }
 
         }
 
@@ -55,7 +60,7 @@ int main() {
     // print out sorted list
     for (int i = 0; i < v.size(); i++) {
         //you should ovrride << to YourClass
-        cout << v[i] << endl;
+        //cout << v[i] << endl;
     }
 
     // FINISH ME
