@@ -3,7 +3,7 @@
 #include <cassert>
 #include "BinaryInsertionSort.h"
 #include "Node.h"
-#include "Data.h
+#include "Data.h"
 #include <iostream>
 #include <fstream>
 using namespace std;

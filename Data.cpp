@@ -22,3 +22,6 @@ bool Data::operator>(const Data &rhs) {
         return false;
     }
 }
+friend bool Data::operator<<(const Data &rhs) {
+    cout << data;
+}
