@@ -9,7 +9,7 @@ using namespace std;
 
 ostream& operator<<(ostream& os, const Data& d)
 {
-    os << d.data << '/' << d.data;
+    os << d.data;
     return os;
 }
 int main() {
@@ -17,7 +17,7 @@ int main() {
     string dataStr;
     double dataNum;
     ifstream inFile;
-    inFile.open("data.txt");
+    inFile.open(../"data.txt");
     string temp;
     string line;
    //read the file name of your dataset
@@ -25,17 +25,19 @@ int main() {
     vector<Data> v(2017);
     for(int i = 0; i < v.size(); i++)
         {
-        if(inFile.is_open()){
+
+            getline(inFile, temp, ',');
+            getline(inFile, temp, ',');
             getline(inFile, temp, ',');
             getline(inFile, dataStr, ',');
             getline(inFile, line, '\n');
 
-            dataNum = stod(dataStr);
+            dataNum = stoi(dataStr);
 
             Data data(dataNum);
 
             v.at(i) = data;
-        }
+
         }
 
     inFile.close();
