@@ -3,6 +3,8 @@
 //
 #ifndef BINARYINSERTIONSORT_DATA_H
 #define BINARYINSERTIONSORT_DATA_H
+#include <iostream>
+using namespace std;
 
 class Data {
 public:
@@ -12,6 +14,7 @@ public:
     bool operator>(const Data &rhs);
     bool operator==(const Data &rhs);
     Data& operator=(const Data &rhs);
+    friend ostream& operator<<(ostream& os, const Data& d);
 
 
 private:

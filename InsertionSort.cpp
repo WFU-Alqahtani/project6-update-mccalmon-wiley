@@ -7,6 +7,11 @@
 #include <fstream>
 using namespace std;
 
+ostream& operator<<(ostream& os, const Data& d)
+{
+    os << d.data << '/' << d.data;
+    return os;
+}
 int main() {
 
     double data;
