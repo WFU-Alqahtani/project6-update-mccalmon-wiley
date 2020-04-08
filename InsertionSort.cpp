@@ -63,7 +63,6 @@ int main() {
     //}
 
     // FINISH ME
-    cout << "Hello";
     LinkedList list;
     list.InsertionSort(v);
     list.printList();

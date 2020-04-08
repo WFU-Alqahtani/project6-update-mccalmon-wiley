@@ -6,8 +6,7 @@
 #include <vector>
 
 LinkedList::LinkedList() {
-    head = nullptr;
-
+    head = new Node();
 }
 
 LinkedList::~LinkedList() {
@@ -75,11 +74,16 @@ void LinkedList::InsertionSort(vector<Data> v) {
 
 }
 
+
 void LinkedList::printList() {
     Node* current = head;
+
+
     while(current->next != nullptr) {
         current = current->next;
-        cout << current->value;
+        cout << current->value << endl;
     }
     cout << current->value;
+
+
 }
