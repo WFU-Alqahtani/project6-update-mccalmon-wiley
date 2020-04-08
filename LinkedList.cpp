@@ -6,29 +6,32 @@
 #include <vector>
 
 LinkedList::LinkedList() {
-    head = nullptr;
+    head = new Node();
 }
 
 LinkedList::~LinkedList() {
     cout << "Destructor called" << endl;
     Node* current = head;
-    if (current->next == nullptr) {
+    while (head->next != nullptr) {
+        head = head ->next;
         delete current;
-    }
-    else {
-        while (current->next != nullptr) {
-            Node* previous = current;
-            current = current->next;
-            delete previous;
-        }
+        current = head;
     }
 
 }
 
 LinkedList::LinkedList(const LinkedList &list) {
     cout << "Copy constructor called" << endl;
-    head = new Node(0, nullptr);
-    *head = *(list.head);
+    Node* current = list.head;
+    if (current->next == nullptr) {
+        head = new Node(current->value, nullptr);
+        current = current ->next;
+    }
+
+    while (current->next != nullptr) {
+        Node* newNode = new Node(current->value, current->next);
+        current = current ->next;
+    }
 }
 
 LinkedList &LinkedList::operator=(LinkedList rhs) {
@@ -38,6 +41,7 @@ LinkedList &LinkedList::operator=(LinkedList rhs) {
 }
 
 void LinkedList::InsertionSort(vector<Data> v) {
+    cout << "Hello";
     Node* current = head;
     Node* previous = current;
     bool didInsert;
@@ -70,11 +74,16 @@ void LinkedList::InsertionSort(vector<Data> v) {
 
 }
 
+
 void LinkedList::printList() {
     Node* current = head;
+
+
     while(current->next != nullptr) {
         current = current->next;
-        cout << current->value;
+        cout << current->value << endl;
     }
     cout << current->value;
+
+
 }

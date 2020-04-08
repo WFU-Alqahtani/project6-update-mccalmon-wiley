@@ -5,6 +5,10 @@
 class Node {
 public:
     // Node constructor
+    Node() {
+        value = 0;
+        next = nullptr;
+    }
     Node(Data v , Node* n = nullptr)
     {
         value = v;

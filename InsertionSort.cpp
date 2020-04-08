@@ -63,9 +63,7 @@ int main() {
     //}
 
     // FINISH ME
-
     LinkedList list;
-
     list.InsertionSort(v);
     list.printList();
 
