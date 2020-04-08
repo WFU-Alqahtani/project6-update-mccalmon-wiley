@@ -9,6 +9,8 @@ public:
     Data(double d);
     bool operator<=(const Data &rhs);
     bool operator>(const Data &rhs);
+    bool operator==(const Data &rhs);
+    Data& operator=(const Data &rhs);
 
 private:
     double data;

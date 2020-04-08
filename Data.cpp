@@ -22,3 +22,18 @@ bool Data::operator>(const Data &rhs) {
         return false;
     }
 }
+
+bool Data::operator==(const Data &rhs) {
+    if (this->data == rhs.data) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
+
+Data& Data::operator=(const Data &rhs) {
+    this -> data = rhs.data;
+    return *this;
+}
