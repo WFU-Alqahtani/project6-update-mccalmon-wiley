@@ -17,7 +17,7 @@ int main() {
     string dataStr;
     double dataNum;
     ifstream inFile;
-    inFile.open(../"data.txt");
+    inFile.open("data.txt");
     string temp;
     string line;
    //read the file name of your dataset
