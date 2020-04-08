@@ -51,9 +51,9 @@ int main() {
 
     // FINISH ME
     LinkedList list;
-    clock_t start_InsertionSort = clock();
+    clock_t start_listInsertionSort = clock();
     list.InsertionSort(v);
-    clock_t end_InsertionSort = clock();
+    clock_t end_listInsertionSort = clock();
     list.printList();
 
     // binary insertion sort
@@ -61,19 +61,20 @@ int main() {
     insertionSort(v, v.size());
     clock_t end_insertionSort = clock();
 
-
+    /*
     // check if sorted
     for (int i = 1; i < v.size(); i++) {
         assert(v[i-1] <= v[i]);
     }
-
+*/
     // print out sorted list
     for (int i = 0; i < v.size(); i++) {
         //you should ovrride << to YourClass
         cout << v[i] << endl;
     }
 
-
-
-
+    double elapsed_insertionSort = double(end_insertionSort - start_insertionSort) / CLOCKS_PER_SEC;
+    cout << elapsed_insertionSort << endl;
+    double elapsed_listinsertionSort = double(end_listInsertionSort - start_listInsertionSort) / CLOCKS_PER_SEC;
+    cout << elapsed_listinsertionSort << endl;
 }
