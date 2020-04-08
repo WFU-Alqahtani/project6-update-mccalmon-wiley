@@ -83,7 +83,7 @@ void LinkedList::printList() {
         current = current->next;
         cout << current->value << endl;
     }
-    cout << current->value;
+
 
 
 }
