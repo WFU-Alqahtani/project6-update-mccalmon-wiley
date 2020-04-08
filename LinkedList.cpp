@@ -55,10 +55,11 @@ void LinkedList::InsertionSort(vector<Data> v) {
             continue;
         }
         while (current->next != nullptr) {
+
             previous = current;
             current = current->next;
-            if (previous->value <= v.at(i) && current->value > v.at(i)) {
-                Node* nextNode = new Node(v.at(i), nullptr);
+            if (v.at(i) > previous->value && v.at(i) <= current->value) {
+                Node* nextNode = new Node(v.at(i), current);
                 previous->next = nextNode;
                 didInsert = true;
                 break;
@@ -67,8 +68,13 @@ void LinkedList::InsertionSort(vector<Data> v) {
         if (!didInsert) {
             Node* nextNode = new Node(v.at(i), nullptr);
             current->next = nextNode;
+            continue;
         }
 
+    }
+    while (head -> next != nullptr) {
+        head = head->next;
+        cout << head->value << endl;
     }
 
 }
