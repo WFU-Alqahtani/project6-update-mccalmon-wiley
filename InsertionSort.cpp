@@ -9,12 +9,12 @@ using namespace std;
 
 ostream& operator<<(ostream& os, const Data& d)
 {
-    os << d.data << '/' << d.data;
+    os << d.data;
     return os;
 }
 int main() {
 
-    double data;
+    string data;
     ifstream inFile;
     inFile.open("data.txt");
     string temp;
@@ -27,8 +27,7 @@ int main() {
         if(inFile.is_open()){
             getline(inFile, temp, ',');
             getline(inFile, line, '\n');
-            v.at(i) = data;
-        }
+
         }
     inFile.close();
     // populate the vector with the data from your data set
