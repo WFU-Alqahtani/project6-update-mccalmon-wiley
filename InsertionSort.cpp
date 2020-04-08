@@ -47,6 +47,12 @@ int main() {
     inFile.close();
     // populate the vector with the data from your data set
 
+
+    // FINISH ME
+    LinkedList list;
+    list.InsertionSort(v);
+    list.printList();
+
     // binary insertion sort
     insertionSort(v, v.size());
 
@@ -62,10 +68,7 @@ int main() {
         cout << v[i] << endl;
     }
 
-    // FINISH ME
-    LinkedList list;
-    list.InsertionSort(v);
-    list.printList();
+
 
 
 }
