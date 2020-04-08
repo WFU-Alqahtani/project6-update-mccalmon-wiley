@@ -5,6 +5,7 @@
 #include "Node.h"
 #include <iostream>
 #include <fstream>
+#include <ctime>
 #include "LinkedList.h"
 using namespace std;
 
@@ -50,11 +51,15 @@ int main() {
 
     // FINISH ME
     LinkedList list;
+    clock_t start_InsertionSort = clock();
     list.InsertionSort(v);
+    clock_t end_InsertionSort = clock();
     list.printList();
 
     // binary insertion sort
+    clock_t start_insertionSort = clock();
     insertionSort(v, v.size());
+    clock_t end_insertionSort = clock();
 
 
     // check if sorted
