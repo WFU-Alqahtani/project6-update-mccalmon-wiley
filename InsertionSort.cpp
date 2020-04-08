@@ -57,10 +57,10 @@ int main() {
     }
 
     // print out sorted list
-    //for (int i = 0; i < v.size(); i++) {
+    for (int i = 0; i < v.size(); i++) {
         //you should ovrride << to YourClass
-        //cout << v[i] << endl;
-    //}
+        cout << v[i] << endl;
+    }
 
     // FINISH ME
     LinkedList list;

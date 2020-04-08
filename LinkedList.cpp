@@ -41,7 +41,6 @@ LinkedList &LinkedList::operator=(LinkedList rhs) {
 }
 
 void LinkedList::InsertionSort(vector<Data> v) {
-    cout << "Hello";
     Node* current = head;
     Node* previous = current;
     bool didInsert;
@@ -77,13 +76,8 @@ void LinkedList::InsertionSort(vector<Data> v) {
 
 void LinkedList::printList() {
     Node* current = head;
-
-
     while(current->next != nullptr) {
         current = current->next;
         cout << current->value << endl;
     }
-    cout << current->value;
-
-
 }
