@@ -3,7 +3,7 @@
 //
 #include "Data.h"
 Data::Data() {
-
+    data = 0;
 }
 Data::Data(double d){
     data=d;
