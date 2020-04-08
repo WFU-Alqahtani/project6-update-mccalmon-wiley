@@ -29,7 +29,7 @@ int main() {
     for(int i = 0; i < v.size(); i++)
     {
         if (!inFile.eof()) {
-
+            //skip 3 lines
             getline(inFile, temp, ',');
             getline(inFile, temp, ',');
             getline(inFile, temp, ',');

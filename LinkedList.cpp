@@ -14,7 +14,7 @@ LinkedList::~LinkedList() {
     Node* current = head;
     while (head->next != nullptr) {
         head = head ->next;
-        delete current;
+        delete current; // deletes node
         current = head;
     }
 
@@ -23,7 +23,7 @@ LinkedList::~LinkedList() {
 LinkedList::LinkedList(const LinkedList &list) {
     cout << "Copy constructor called" << endl;
     Node* current = list.head;
-    if (current->next == nullptr) {
+    if (current->next == nullptr) { // if no elements in the list
         head = new Node(current->value, nullptr);
         current = current ->next;
     }
@@ -48,33 +48,29 @@ void LinkedList::InsertionSort(vector<Data> v) {
         didInsert = false;
         current = head;
         previous = current;
-        if (current->next == nullptr) {
+        if (current->next == nullptr) { //If no elements in the list
             Node* nextNode = new Node(v.at(i), nullptr);
             current->next = nextNode;
             didInsert = true;
             continue;
         }
         while (current->next != nullptr) {
-
+            //This is for if the element needs to go in between two already created nodes
             previous = current;
             current = current->next;
             if (v.at(i) > previous->value && v.at(i) <= current->value) {
-                Node* nextNode = new Node(v.at(i), current);
-                previous->next = nextNode;
+                Node* nextNode = new Node(v.at(i), current); //create node in the middle
+                previous->next = nextNode; //rearrange pointer
                 didInsert = true;
                 break;
             }
         }
-        if (!didInsert) {
+        if (!didInsert) { //If the node needs to be at the very end
             Node* nextNode = new Node(v.at(i), nullptr);
             current->next = nextNode;
             continue;
         }
 
-    }
-    while (head -> next != nullptr) {
-        head = head->next;
-        cout << head->value << endl;
     }
 
 }
