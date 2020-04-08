@@ -2,6 +2,7 @@
 // Created by Cade Wiley on 3/31/20.
 //
 #include "Data.h"
+
 Data::Data() {
     data = 0;
 }
@@ -37,3 +38,5 @@ Data& Data::operator=(const Data &rhs) {
     this -> data = rhs.data;
     return *this;
 }
+
+

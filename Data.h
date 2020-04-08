@@ -13,6 +13,7 @@ public:
     bool operator==(const Data &rhs);
     Data& operator=(const Data &rhs);
 
+
 private:
     double data;
 };
