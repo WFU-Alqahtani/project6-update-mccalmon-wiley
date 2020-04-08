@@ -14,22 +14,30 @@ ostream& operator<<(ostream& os, const Data& d)
 }
 int main() {
 
-    double data;
+    string dataStr;
+    double dataNum;
     ifstream inFile;
     inFile.open("data.txt");
     string temp;
     string line;
    //read the file name of your dataset
 
-    vector<Data> v;
+    vector<Data> v(2017);
     for(int i = 0; i < v.size(); i++)
         {
         if(inFile.is_open()){
             getline(inFile, temp, ',');
+            getline(inFile, dataStr, ',');
             getline(inFile, line, '\n');
+
+            dataNum = stod(dataStr);
+
+            Data data(dataNum);
+
             v.at(i) = data;
         }
         }
+
     inFile.close();
     // populate the vector with the data from your data set
 
