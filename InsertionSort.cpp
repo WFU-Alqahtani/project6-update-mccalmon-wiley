@@ -5,6 +5,7 @@
 #include "Node.h"
 #include <iostream>
 #include <fstream>
+#include "LinkedList.h"
 using namespace std;
 
 ostream& operator<<(ostream& os, const Data& d)
@@ -14,7 +15,6 @@ ostream& operator<<(ostream& os, const Data& d)
 }
 
 int main() {
-
     string dataStr;
     double dataNum;
     ifstream inFile;
@@ -22,6 +22,7 @@ int main() {
     string temp;
     string line;
    //read the file name of your dataset
+
 
     vector<Data> v(2017);
     for(int i = 0; i < v.size(); i++)
@@ -34,9 +35,7 @@ int main() {
             getline(inFile, dataStr, ',');
             getline(inFile, line, '\n');
 
-            cout << dataStr << endl;
-
-            //dataNum = stod(dataStr);
+            dataNum = stod(dataStr);
 
             Data data(dataNum);
 
@@ -58,11 +57,17 @@ int main() {
     }
 
     // print out sorted list
-    for (int i = 0; i < v.size(); i++) {
+    //for (int i = 0; i < v.size(); i++) {
         //you should ovrride << to YourClass
         //cout << v[i] << endl;
-    }
+    //}
 
     // FINISH ME
+
+    LinkedList list;
+
+    list.InsertionSort(v);
+    list.printList();
+
 
 }
