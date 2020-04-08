@@ -3,4 +3,4 @@ project(BinaryInsertionSort)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(BinaryInsertionSort InsertionSort.cpp BinaryInsertionSort.cpp Data.h)
+add_executable(BinaryInsertionSort InsertionSort.cpp BinaryInsertionSort.cpp Data.cpp LinkedList.cpp)
