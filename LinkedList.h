@@ -26,7 +26,7 @@ public:
     //void append(Data obj);
     //bool Delete (Data obj);
     //Data find (Data obj)
-    //void printList();
+    void printList();
     void InsertionSort(vector<Data> v);
 
 private:
